@@ -27,3 +27,7 @@ PRODUCT_MODEL := Redmi Note 10
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+	BuildDesc="mojito-user 12 SKQ1.210908.001 V14.0.9.0.SKGMIXM release-keys" \
+	BuildFingerprint=Redmi/mojito/mojito:12/SKQ1.210908.001/V14.0.9.0.SKGMIXM:user/release-keys
