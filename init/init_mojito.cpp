@@ -55,45 +55,7 @@ void load_dalvikvm_props() {
     property_override("dalvik.vm.heapminfree", "8m");
 }
 
-void load_vendor_props() {
-
-    const char *board_fp = "Redmi/mojito/mojito:12/SKQ1.210908.001/V14.0.9.0.SKGMIXM:user/release-keys";
-    const char *product_name = "mojito";
-
-    property_override("bluetooth.device.default_name", "Redmi Note 10");
-    property_override("vendor.usb.product_string", "Redmi Note 10");
-    property_override("ro.product.brand", "Redmi");
-    property_override("ro.product.manufacturer", "Xiaomi");
-    property_override("ro.product.model", "M2101K7AI");
-    property_override("ro.build.description", "mojito-user 12 SKQ1.210908.001 V14.0.9.0.SKGMIXM release-keys");
-
-    property_override("ro.boot.hwname", product_name);
-    property_override("ro.boot.product.hardware.sku", product_name);
-    property_override("ro.build.product", product_name);
-    property_override("ro.product.bootimage.device", product_name);
-    property_override("ro.product.bootimage.name", product_name);
-    property_override("ro.product.device", product_name);
-    property_override("ro.product.name", product_name);
-    property_override("ro.product.odm.device", product_name);
-    property_override("ro.product.product.device", product_name);
-    property_override("ro.product.system.device", product_name);
-    property_override("ro.product.system_ext.device", product_name);
-    property_override("ro.product.vendor.device", product_name);
-    property_override("ro.product.vendor_dlkm.device", product_name);
-
-    property_override("ro.bootimage.build.fingerprint", board_fp);
-    property_override("ro.build.fingerprint", board_fp);
-    property_override("ro.odm.build.fingerprint", board_fp);
-    property_override("ro.product.build.fingerprint", board_fp);
-    property_override("ro.system.build.fingerprint", board_fp);
-    property_override("ro.system_ext.build.fingerprint", board_fp);
-    property_override("ro.vendor.build.fingerprint", board_fp);
-    property_override("ro.vendor_dlkm.build.fingerprint", board_fp);
-
-}
-
 void vendor_load_properties() {
     std::string region = GetProperty("ro.boot.hwc", "");
-    load_vendor_props();
     load_dalvikvm_props();
 }
